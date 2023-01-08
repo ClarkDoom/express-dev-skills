@@ -18,7 +18,7 @@
     <button type="submit">Delete Skill</button>
   </form>
   <h3><%= skill.name %></h3>
-  <p>Mastered: <%= skill.done ? 'Yes' : 'No' %></p>
+  <p>Mastered: <%= skill.mastered ? 'Yes' : 'No' %></p>
   <p>Use Case: <%= skill.useCase %></p>
 	<a href="/skills">Go back</a><br>
   <a href="/skills/<%= skill._id %>/edit">Edit Skill</a>

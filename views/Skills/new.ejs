@@ -12,7 +12,10 @@
     <h1>New Skills</h1>
     <form action="/skills" method="POST" autocomplete="off">
       <input value="Skill Name" type="text" name="name"><br>
-      <input style="width:300px" value="Use Case" type="text" name="useCase"><br><br>
+      <input style="width:300px" value="Use Case" type="text" name="useCase">
+      <br>
+      <p>Mastered?</p><input name="mastered" type="checkbox">
+      <br><br>
       <button type="submit">Save Skill</button>
     </form>
   </body>

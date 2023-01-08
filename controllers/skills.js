@@ -5,7 +5,7 @@ function index(req, res) {
   .then(skills => {
     res.render('skills/index', {
       skills: skills,
-      time: req.time
+
     })
   })
   .catch(error => {
@@ -19,7 +19,8 @@ function newSkill(req,res){
 }
 
 function create(req, res) {
-  req.body.done = false
+  // req.body.done = false
+  req.body.mastered = !!req.body.mastered
   Skill.create(req.body)
   .then(skill => [
     res.redirect('/skills')
@@ -65,6 +66,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  req.body.mastered = !!req.body.mastered
   Skill.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(skill => {
     res.redirect(`/skills/${req.params.id}`)
